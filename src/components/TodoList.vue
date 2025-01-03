@@ -29,6 +29,7 @@
     </div>
 
     <Celebrate v-if="allCompleted && todos.length > 0" />
+    <Weather />
   </div>
 </template>
 
@@ -36,6 +37,7 @@
 import { ref, computed } from 'vue';
 import TodoItem from './TodoItem.vue';
 import Celebrate from './Celebrate.vue';
+import Weather from './Weather.vue';
 
 const todos = ref([]);
 const newTodo = ref('');
@@ -96,6 +98,7 @@ function handleDrop(event, index) {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  padding-bottom: 160px;
 }
 
 .todo-input {
