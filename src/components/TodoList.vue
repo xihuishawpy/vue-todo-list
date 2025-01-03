@@ -30,6 +30,7 @@
 
     <Celebrate v-if="allCompleted && todos.length > 0" />
     <Weather />
+    <DailyQuote />
   </div>
 </template>
 
@@ -38,6 +39,7 @@ import { ref, computed } from 'vue';
 import TodoItem from './TodoItem.vue';
 import Celebrate from './Celebrate.vue';
 import Weather from './Weather.vue';
+import DailyQuote from './DailyQuote.vue';
 
 const todos = ref([]);
 const newTodo = ref('');

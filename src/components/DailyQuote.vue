@@ -10,8 +10,7 @@
     </div>
     <div v-else class="quote-content">
       <i class="fas fa-quote-left quote-icon"></i>
-      <div class="quote-text">{{ quote.yiyan }}</div>
-      <div class="quote-author">—— {{ quote.nick }}</div>
+      <div class="quote-text">{{ quote.data }}</div>
     </div>
   </div>
 </template>
@@ -25,7 +24,14 @@ const error = ref('');
 
 const fetchQuote = async () => {
   try {
-    const response = await fetch('https://api.nxvav.cn/api/yiyan/?encode=json&charset=utf-8');
+    const response = await fetch('https://tenapi.cn/v2/yiyan', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: 'format=json'
+    });
+    
     if (!response.ok) {
       throw new Error('API 请求失败');
     }
@@ -34,8 +40,7 @@ const fetchQuote = async () => {
     error.value = '获取每日一言失败';
     console.error('Quote API Error:', e);
     quote.value = {
-      yiyan: "生活明朗，万物可爱",
-      nick: "默认"
+      data: "生活明朗，万物可爱"
     };
   } finally {
     loading.value = false;
@@ -51,10 +56,8 @@ onMounted(() => {
 .daily-quote {
   position: fixed;
   bottom: 20px;
-  left: calc(50% + 210px); /* 天气卡片宽度的一半 + 间距 */
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
+  right: 20px;
+  width: 300px;
   padding: 15px;
   background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
   color: white;
@@ -65,7 +68,7 @@ onMounted(() => {
 }
 
 .daily-quote:hover {
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
@@ -98,18 +101,18 @@ onMounted(() => {
   text-align: center;
 }
 
-.quote-author {
-  text-align: right;
-  font-style: italic;
-  font-size: 14px;
-  opacity: 0.8;
-  margin-top: 10px;
-}
-
 @media (max-width: 900px) {
   .daily-quote {
-    bottom: 90px; /* 在小屏幕上显示在天气卡片上方 */
-    left: 50%;
+    position: fixed;
+    bottom: 90px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .daily-quote:hover {
+    transform: translate(50%, -2px);
   }
 }
 </style> 
