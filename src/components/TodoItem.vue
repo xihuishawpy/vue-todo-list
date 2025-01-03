@@ -49,7 +49,6 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   transition: all 0.3s ease;
   animation: slideIn 0.3s ease;
   position: relative;
-  z-index: 2002;
 }
 
 @keyframes slideIn {
@@ -80,7 +79,6 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   width: 20px;
   height: 20px;
   margin-right: 12px;
-  z-index: 2003;
 }
 
 .custom-checkbox {
@@ -89,7 +87,6 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   cursor: pointer;
   height: 0;
   width: 0;
-  z-index: 2004;
 }
 
 .checkmark {
@@ -102,7 +99,6 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   border: 2px solid #ddd;
   border-radius: 4px;
   transition: all 0.2s ease;
-  z-index: 2003;
 }
 
 .custom-checkbox:checked ~ .checkmark {
@@ -142,7 +138,6 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   padding: 8px;
   border-radius: 4px;
   position: relative;
-  z-index: 2003;
 }
 
 .delete-btn:hover {

@@ -104,7 +104,6 @@ function handleDrop(event, index) {
   padding: 20px;
   padding-bottom: 300px;
   position: relative;
-  z-index: 2000;
 }
 
 @media (max-width: 900px) {
@@ -118,7 +117,6 @@ function handleDrop(event, index) {
   display: flex;
   margin-bottom: 20px;
   position: relative;
-  z-index: 2001;
 }
 
 .todo-input input {
