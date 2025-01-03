@@ -117,14 +117,14 @@ onMounted(() => {
   .daily-quote {
     position: fixed;
     bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
   }
 
   .daily-quote:hover {
-    transform: translate(50%, -2px);
+    transform: translate(-50%, -2px);
   }
 }
 </style> 
