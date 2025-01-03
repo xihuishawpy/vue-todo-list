@@ -8,17 +8,12 @@
     @dragover.prevent
     @drop="$emit('drop', $event)"
   >
-    <div class="checkbox-wrapper">
-      <input 
-        type="checkbox" 
-        :checked="todo.completed"
-        @change="$emit('toggle')"
-        class="custom-checkbox"
-      >
-      <span class="checkmark">
-        <i class="fas fa-check"></i>
-      </span>
-    </div>
+    <input 
+      type="checkbox" 
+      :checked="todo.completed"
+      @change="$emit('toggle')"
+      class="todo-checkbox"
+    >
     <span class="todo-text">{{ todo.text }}</span>
     <button @click="$emit('delete')" class="delete-btn">
       <i class="fas fa-trash-alt"></i>
@@ -74,50 +69,9 @@ defineEmits(['toggle', 'delete', 'dragstart', 'dragend', 'drop']);
   color: #6c757d;
 }
 
-.checkbox-wrapper {
-  position: relative;
-  width: 20px;
-  height: 20px;
+.todo-checkbox {
   margin-right: 12px;
-}
-
-.custom-checkbox {
-  position: absolute;
-  opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.custom-checkbox:checked ~ .checkmark {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
-}
-
-.checkmark i {
-  color: white;
-  font-size: 12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-}
-
-.custom-checkbox:checked ~ .checkmark i {
-  display: block;
 }
 
 .todo-text {
