@@ -24,18 +24,17 @@ const error = ref('');
 
 const fetchQuote = async () => {
   try {
-    const response = await fetch('https://tenapi.cn/v2/yiyan', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: 'format=json'
-    });
+    const response = await fetch('https://tenapi.cn/v2/yiyan?format=json');
     
     if (!response.ok) {
       throw new Error('API 请求失败');
     }
-    quote.value = await response.json();
+    const data = await response.json();
+    if (data.code === 200) {
+      quote.value = data;
+    } else {
+      throw new Error('API 返回错误');
+    }
   } catch (e) {
     error.value = '获取每日一言失败';
     console.error('Quote API Error:', e);
