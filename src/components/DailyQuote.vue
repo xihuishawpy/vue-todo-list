@@ -26,10 +26,17 @@ const error = ref('');
 const fetchQuote = async () => {
   try {
     const response = await fetch('https://api.nxvav.cn/api/yiyan/?encode=json&charset=utf-8');
+    if (!response.ok) {
+      throw new Error('API 请求失败');
+    }
     quote.value = await response.json();
   } catch (e) {
     error.value = '获取每日一言失败';
     console.error('Quote API Error:', e);
+    quote.value = {
+      yiyan: "生活明朗，万物可爱",
+      nick: "默认"
+    };
   } finally {
     loading.value = false;
   }
