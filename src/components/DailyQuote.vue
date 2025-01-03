@@ -58,7 +58,7 @@ onMounted(() => {
 .daily-quote {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: calc(50% + 10px);
   width: 300px;
   padding: 15px;
   background: linear-gradient(135deg, #4B79A1, #283E51);
@@ -116,7 +116,7 @@ onMounted(() => {
 @media (max-width: 900px) {
   .daily-quote {
     position: fixed;
-    bottom: 90px;
+    bottom: 20px;
     right: 50%;
     transform: translateX(50%);
     width: 90%;

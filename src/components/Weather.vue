@@ -105,8 +105,7 @@ onMounted(() => {
 .weather {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 310px);
   width: 90%;
   max-width: 400px;
   padding: 15px;
@@ -210,5 +209,13 @@ onMounted(() => {
 
 .weather-icon {
   animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .weather {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 90px;
+  }
 }
 </style> 
