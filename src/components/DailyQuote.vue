@@ -10,7 +10,10 @@
     </div>
     <div v-else class="quote-content">
       <i class="fas fa-quote-left quote-icon"></i>
-      <div class="quote-text">{{ quote.data }}</div>
+      <div class="quote-text">
+        <div class="en">{{ quote.content }}</div>
+        <div class="zh">{{ quote.note }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,22 +27,19 @@ const error = ref('');
 
 const fetchQuote = async () => {
   try {
-    const response = await fetch('https://tenapi.cn/v2/yiyan?format=json');
+    const response = await fetch('http://open.iciba.com/dsapi/');
     
     if (!response.ok) {
       throw new Error('API 请求失败');
     }
     const data = await response.json();
-    if (data.code === 200) {
-      quote.value = data;
-    } else {
-      throw new Error('API 返回错误');
-    }
+    quote.value = data;
   } catch (e) {
     error.value = '获取每日一言失败';
     console.error('Quote API Error:', e);
     quote.value = {
-      data: "生活明朗，万物可爱"
+      content: "The only thing constant in life is change.",
+      note: "生活中唯一不变的就是变化。"
     };
   } finally {
     loading.value = false;
@@ -58,7 +58,7 @@ onMounted(() => {
   right: 20px;
   width: 300px;
   padding: 15px;
-  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+  background: linear-gradient(135deg, #4B79A1, #283E51);
   color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -95,9 +95,19 @@ onMounted(() => {
 
 .quote-text {
   margin: 10px 0;
-  font-size: 16px;
   line-height: 1.5;
   text-align: center;
+}
+
+.en {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.zh {
+  font-size: 14px;
+  opacity: 0.9;
+  color: #e8e8e8;
 }
 
 @media (max-width: 900px) {
