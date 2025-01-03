@@ -115,14 +115,7 @@ onMounted(() => {
 
 @media (max-width: 900px) {
   .daily-quote {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 320px;
-    padding: 10px;
-    z-index: 12;
+    display: none;  /* 在移动端隐藏 */
   }
 
   .daily-quote:hover {

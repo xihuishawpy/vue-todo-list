@@ -213,33 +213,7 @@ onMounted(() => {
 
 @media (max-width: 900px) {
   .weather {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 130px;
-    width: 90%;
-    max-width: 320px;
-    padding: 10px;
-    z-index: 11;
-  }
-
-  .city {
-    font-size: 16px;
-  }
-
-  .weather-info {
-    gap: 15px;
-  }
-
-  .temperature {
-    font-size: 20px;
-  }
-
-  .weather-text, .wind, .humidity {
-    font-size: 12px;
-  }
-
-  .weather:hover {
-    transform: translate(-50%, -2px);
+    display: none;
   }
 }
 </style> 

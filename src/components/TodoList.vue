@@ -110,7 +110,7 @@ function handleDrop(event, index) {
 @media (max-width: 900px) {
   .todo-list {
     padding: 15px;
-    padding-bottom: 340px;
+    padding-bottom: 20px;
   }
 }
 
