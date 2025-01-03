@@ -120,11 +120,25 @@ onMounted(() => {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 400px;
+    max-width: 320px;
+    padding: 10px;
   }
 
   .daily-quote:hover {
     transform: translate(-50%, -2px);
+  }
+
+  .quote-text {
+    margin: 8px 0;
+  }
+
+  .en {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .zh {
+    font-size: 12px;
   }
 }
 </style> 

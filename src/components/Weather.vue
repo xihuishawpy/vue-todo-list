@@ -215,7 +215,26 @@ onMounted(() => {
   .weather {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 95px;
+    bottom: 110px;
+    width: 90%;
+    max-width: 320px;
+    padding: 10px;
+  }
+
+  .city {
+    font-size: 16px;
+  }
+
+  .weather-info {
+    gap: 15px;
+  }
+
+  .temperature {
+    font-size: 20px;
+  }
+
+  .weather-text, .wind, .humidity {
+    font-size: 12px;
   }
 
   .weather:hover {
