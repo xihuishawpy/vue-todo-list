@@ -215,7 +215,7 @@ onMounted(() => {
   .weather {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 100px;
+    bottom: 95px;
   }
 
   .weather:hover {

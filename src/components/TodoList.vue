@@ -102,7 +102,7 @@ function handleDrop(event, index) {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  padding-bottom: 160px;
+  padding-bottom: 280px;
 }
 
 .todo-input {

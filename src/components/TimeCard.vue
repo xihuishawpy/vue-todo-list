@@ -134,7 +134,7 @@ onUnmounted(() => {
 @media (max-width: 900px) {
   .time-card {
     position: fixed;
-    bottom: 180px;
+    bottom: 170px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
