@@ -27,13 +27,16 @@ const error = ref('');
 
 const fetchQuote = async () => {
   try {
-    const response = await fetch('http://open.iciba.com/dsapi/');
+    const response = await fetch('https://v1.hitokoto.cn/');
     
     if (!response.ok) {
       throw new Error('API 请求失败');
     }
     const data = await response.json();
-    quote.value = data;
+    quote.value = {
+      content: data.hitokoto,
+      note: data.from
+    };
   } catch (e) {
     error.value = '获取每日一言失败';
     console.error('Quote API Error:', e);
