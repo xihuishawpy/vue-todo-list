@@ -215,10 +215,11 @@ onMounted(() => {
   .weather {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 110px;
+    bottom: 130px;
     width: 90%;
     max-width: 320px;
     padding: 10px;
+    z-index: 11;
   }
 
   .city {

@@ -122,6 +122,7 @@ onMounted(() => {
     width: 90%;
     max-width: 320px;
     padding: 10px;
+    z-index: 12;
   }
 
   .daily-quote:hover {
@@ -139,6 +140,14 @@ onMounted(() => {
 
   .zh {
     font-size: 12px;
+  }
+
+  .quote-content {
+    padding: 5px;
+  }
+
+  .quote-icon {
+    font-size: 16px;
   }
 }
 </style> 

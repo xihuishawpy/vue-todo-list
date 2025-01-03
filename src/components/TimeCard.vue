@@ -134,12 +134,13 @@ onUnmounted(() => {
 @media (max-width: 900px) {
   .time-card {
     position: fixed;
-    bottom: 200px;
+    bottom: 240px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 320px;
     padding: 10px;
+    z-index: 10;
   }
 
   .time-card:hover {

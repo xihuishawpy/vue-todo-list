@@ -103,18 +103,22 @@ function handleDrop(event, index) {
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 300px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
   .todo-list {
     padding: 15px;
-    padding-bottom: 320px;
+    padding-bottom: 340px;
   }
 }
 
 .todo-input {
   display: flex;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .todo-input input {
